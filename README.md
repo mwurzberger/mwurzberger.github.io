@@ -1,10 +1,17 @@
 # mwurzberger.github.io
 
 
-Tabletop.js
+Tabletop.js ( https://github.com/jsoma/tabletop )
 Makes google spreadsheets accessible through JS.
 
-https://github.com/jsoma/tabletop
+
+https://cdnjs.com/
+
+
+
+
+Test at http://mwurzberger.github.io/
+Edit sheet at https://docs.google.com/spreadsheets/d/1T58g8PxH2cJ2fARYIMbuYi8GmppMudF4ETwB9MKRzo4/edit
 
 
 Character sheet

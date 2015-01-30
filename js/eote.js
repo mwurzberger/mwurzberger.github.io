@@ -31,14 +31,13 @@ mwurzberger.eote = {
     loadCharacter: function( sheetUrl ) {
         console.log(this.logClass + "loadCharacter"); 
         Tabletop.init({ 
-            key: public_spreadsheet_url,
+            key: sheetUrl,
             callback: this.displayCharacter,
             simpleSheet: true 
         });
     },
 
     displayCharacter: function( data, tabletop ) {
-        alert("Successfully processed!");
         console.log(data);
     }
 };
