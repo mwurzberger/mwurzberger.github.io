@@ -1,7 +1,7 @@
 "use strict";
 
 if (! window.mwurzberger) { var mwurzberger = {}; }
-if (! mwurzberger.eote) { mwurzberger.eote = {}; 
+if (! mwurzberger.eote) { mwurzberger.eote = {}; }
 
 mwurzberger.eote = {
     logClass: "mwurzberger.eote",
@@ -38,10 +38,10 @@ mwurzberger.eote = {
     },
 
     displayCharacter: function( data, tabletop ) {
-        alert("Successfully processed!")
+        alert("Successfully processed!");
         console.log(data);
     }
-}
+};
 
 $(document).ready(function() {
     mwurzberger.eote.initialize();
