@@ -7,6 +7,7 @@ Makes google spreadsheets accessible through JS.
 
 https://cdnjs.com/
 
+git clone http://github.com/mwurzberger/mwurzberger.github.io
 
 
 
