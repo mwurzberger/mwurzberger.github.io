@@ -5,6 +5,7 @@ if (! mwurzberger.eote) { mwurzberger.eote = {}; }
 
 mwurzberger.eote = {
     logClass: "mwurzberger.eote",
+    datasource: null,
 
     initialize: function() {
         console.log(this.logClass + "initialize");
@@ -39,6 +40,7 @@ mwurzberger.eote = {
 
     displayCharacter: function( data, tabletop ) {
         console.log(data);
+        this.datasource = tabletop;
     }
 };
 
