@@ -4,7 +4,7 @@ if (! window.mwurzberger) { var mwurzberger = {}; }
 if (! mwurzberger.eote) { mwurzberger.eote = {}; }
 
 mwurzberger.eote = {
-    logClass: "mwurzberger.eote",
+    logClass: "mwurzberger.eote ",
     datasource: null,
 
     initialize: function() {
@@ -33,7 +33,7 @@ mwurzberger.eote = {
         console.log(this.logClass + "loadCharacter"); 
         Tabletop.init({ 
             key: sheetUrl,
-            callback: this.displayCharacter,
+            callback: $.proxy(this.displayCharacter, this));
             simpleSheet: true 
         });
     },
