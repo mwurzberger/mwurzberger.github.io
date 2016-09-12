@@ -1,0 +1,124 @@
+<html>
+<head>
+	<title>REST + jQuery Example</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		// Requires jquery 3.1.0
+		// Good resource for jQuery REST http://www.lm-tech.it/Blog/post/2013/05/08/How-to-consume-a-RESTful-service-using-jQuery.aspx
+
+		/**
+		 * updates a form dropdown
+		 * @param  {string} selector     Standard jQuery selector string like '#myElementId' or  '.myElementClass'
+		 * @param  {array} optionsArray  Javascript array of objects like {option: 'Display One', value: 1}
+		 */
+		function udpateDropdown(selector, optionsArray) {
+			console.log('udpateDropdown');
+			var $dropdown = $(selector);
+			$dropdown.empty(); // Remove child nodes
+			optionsArray.forEach(function (entry) {
+				var newOption = $('<option value="' + entry.value + '">' + entry.option + '</option>');
+				$dropdown.append(newOption);
+			});
+			$dropdown.trigger('choen:updated'); // Causes the dropdown to re-build itself
+		}
+
+		function getApplications() {
+			console.log('getApplications');
+			// this is based on the trigger so it already knows ot use #system_os from below
+			console.log('option:selected', $('option:selected', this).val());
+			// $('option:selected', this).text() will get you the display name
+			// $('option:selected', this).val() will get you the option value
+			jQuery.ajax({
+				type: "GET",
+				url: "http://localhost:49193/Contacts.svc/GetAll",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: $('option:selected', this).val(),
+				success: function (data, status, jqXHR) {
+					// do something
+				},
+				error: function (jqXHR, status) {
+					// error handler
+
+					// I'm placing this here so you can see how the update works
+					var appData = [
+						{
+							option: 'Display One',
+							value: 'first'
+						},
+						{
+							option: 'Display Two',
+							value: 'second'
+						},
+						{
+							option: 'Display Three',
+							value: 'third'
+						}
+					];
+					udpateDropdown('#applications', appData);
+				}
+			});
+		}
+
+		function submitMyForm() {
+			console.log('submitMyForm');
+			var formData = JSON.stringify($('#myForm').serializeArray());
+			console.log('formData', formData);
+			jQuery.ajax({
+				type: "PUT",
+				url: "http://localhost:49193/Contacts.svc/Update",
+				contentType: "application/json; charset=utf-8",
+				data: formData,
+				dataType: "json",
+				success: function (data, status, jqXHR) {
+					// do something
+				},
+				error: function (jqXHR, status) {
+					// error handler
+
+				}
+			});
+		}
+	</script>
+</head>
+
+<body>
+	<form id="myForm">
+		<div>
+			<label for="name">System:</label>
+			<select id="system_os" name="system_os">
+				<option value="osx">OSX</option>
+				<option value="windows">Windows</option>
+				<option value="unix">Unix</option>
+			</select>
+		</div>
+		<div>
+			<label for="name">Application:</label>
+			<select id="applications" name="applications" multiple>
+			</select>
+		</div>
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="user_name" />
+		</div>
+		<div>
+			<label for="mail">E-mail:</label>
+			<input type="email" id="mail" name="user_mail" />
+		</div>
+		<div>
+			<label for="msg">Message:</label>
+			<textarea id="msg" name="user_message"></textarea>
+		</div>
+			<div class="button">
+			<button type="button" id="myFormSubmitButton">Send your message</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			console.log('bindings');
+			$('#system_os').on('change', getApplications);
+			$('#myFormSubmitButton').on('click', submitMyForm);
+		});
+	</script>
+</body>
+</html>

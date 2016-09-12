@@ -1,0 +1,156 @@
+body {
+  background: #e1e1e1;
+}
+
+.aarp-blog {
+  font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
+}
+
+.aarp-blog .box--huge {
+  padding: 96px;
+}
+
+.aarp-blog .box {
+  display: block;
+}
+
+.aarp-blog .ph0 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.aarp-blog .site-wrap {
+  background: gray;
+  min-width: 320px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.aarp-blog .prev-blog {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 252px;
+  margin-right: 44px;
+}
+
+.aarp-blog .prev-blog.prev-blog-last {
+  margin-right: 0;
+}
+
+.aarp-blog .card {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  min-height: 545px;
+  max-height: 545px;
+  width: 268px;
+  margin-right: 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.aarp-blog .card.card-last {
+  margin-right: 0;
+}
+
+.aarp-blog .card.card-list {
+  padding: 30px;
+  background-color: #f3f3f2;
+}
+
+.aarp-blog .card.card-wide {
+  width: 558px;
+}
+
+.aarp-blog .card .card-msg {
+  padding: 40px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(192, 0, 0, 0.6);
+}
+
+.aarp-blog .card .card-msg h2 {
+  color: white;
+}
+
+.aarp-blog .card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aarp-blog .card ul li {
+  margin-top: 1em;
+}
+
+.aarp-blog .header, .aarp-blog h1, .aarp-blog h2, .aarp-blog h3, .aarp-blog h4, .aarp-blog h5, .aarp-blog h6 {
+  color: #c00000;
+  font-family: Helvetica, sans-serif;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.aarp-blog h1 {
+  font-size: 47px;
+  line-height: 46px;
+}
+
+.aarp-blog h2 {
+  color: #935b5b;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.aarp-blog h3 {
+  color: #8e8582;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.aarp-blog h4 {
+  color: #d9d0cd;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: none;
+}
+
+.aarp-blog h5 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.aarp-blog h6 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.aarp-blog p {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 16px;
+  color: #200d0d;
+}
+
+.aarp-blog p.big {
+  font-size: 18px;
+}
+
+.aarp-blog p.super {
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.aarp-blog .tile {
+  height: 545px;
+  overflow: hidden;
+}
+
+.aarp-blog .tile .tile-header {
+  margin: 40px;
+}
